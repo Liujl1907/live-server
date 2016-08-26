@@ -27,12 +27,15 @@ class Home extends CI_Controller {
 		// $data = $this->chat->getAll();	
 		// var_dump($data);
 		$this->load->model('admin/Admin_User_model','user');
-		$user = array(
-             'username' => 'chen1',
-             'password' => '123456',
-             'name' =>'十大海归',
-            );
-		 $res = $this->user->create_user($user);
+		// for ($i=0; $i < 10; $i++) { 
+		// 	$user = array(
+  //            'username' => 'chen1',
+  //            'password' => '123456',
+  //            'name' =>'十大海归',
+  //           );
+		//  $res = $this->user->create_user($user);
+		// }
+		
 		 // $res = $this->user->auth($user);
 		 var_dump($res);
 	}

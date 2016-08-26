@@ -20,14 +20,22 @@ class Admin_User_model extends CI_Model {
            ->get()->result_array();
       return $res;
     }
-
+    function detail($uid)
+    {
+       $res = $this->db->from($this->tbl)
+        ->select('*')
+        ->where('uid',$uid)
+        ->limit(1)
+        ->get()->result_array();
+        return $res[0];
+    }
     function count()
     {
         $res = $this->db->from($this->tbl)
           ->count_all_results();
        return $res;
     }
-
+ 
     public function create_user($user)
     {   
         $this->load->library('form_validation');
