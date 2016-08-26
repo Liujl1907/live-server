@@ -62,7 +62,7 @@ class Auth_model extends CI_Model {
       return  $data;
     }
    
-    public function is_sign()
+    public function is_login()
     {
        $user = $this->userinfo();
        return $user['role'] != '-1'?true:false; 

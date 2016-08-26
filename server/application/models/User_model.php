@@ -69,6 +69,7 @@ class User_model extends CI_Model {
                  'ctime' => $now,
                  'role' => '0',
                  'level' => '0',
+                 'status' => '1',
                  'ip' => ip2long($this->input->ip_address())
                 );
                if($this->db->insert($this->tbl, $user) > 0)
