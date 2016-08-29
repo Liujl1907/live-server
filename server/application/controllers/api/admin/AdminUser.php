@@ -35,4 +35,27 @@ class AdminUser extends CI_Controller {
 		echo json_encode($res);
 		return;
 	}
+
+	public function update()
+	{  
+		// $this->output->enable_profiler(TRUE);
+		$user = $this->input->post();
+		if (empty($user['uid']) || !is_numeric($user['uid'])) {
+			exit('input err');
+		}
+		$this->load->database();
+		$this->load->model('admin/Admin_User_model','user');
+		$res = $this->user->update($user);
+		echo json_encode($res);
+		return;
+	}
+	public function hasuser(){
+		// $this->output->enable_profiler(TRUE);
+		$username = $this->input->get('username');
+		$this->load->database();
+		$this->load->model('admin/Admin_User_model','user');
+		$res = $this->user->has_user($username);
+		echo json_encode($res);
+		return;
+	}
 }

@@ -115,12 +115,12 @@ class Admin_User_model extends CI_Model {
       $data = @array(
           "name"=>$user['name'],
           "password" =>$user['password'],
-          "level" =>$user['level']
+          "role" =>$user['role']
        );
       $uid = $user['uid'];
       $rules = array(
             'role' => array(
-                    'field'=>'level',
+                    'field'=>'role',
                     'label'=>'权限组',
                     'rules'=>'trim|required',
                     'errors' => array('required' => '{field}不能为空')
@@ -164,7 +164,8 @@ class Admin_User_model extends CI_Model {
             'code'=>1,
             'msg'=>array(
               array('*' => '更新成功') 
-              )
+              ),
+            'data'=>$data
             );
           }
           else
